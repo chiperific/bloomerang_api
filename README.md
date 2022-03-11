@@ -1,8 +1,12 @@
 # Bloomerang
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bloomerang`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is an unofficial Ruby gem to interact with the v2 [bloomerang.co REST API](https://bloomerang.co/product/integrations-data-management/api/rest-api/).
 
-TODO: Delete this and the text above, and describe your gem
+Not all methods available in the API are currently implemented in this gem. If you find one missing that you need, feel free to add it!
+
+## Implemented Methods
+
+...to be added later...
 
 ## Installation
 
