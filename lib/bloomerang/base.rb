@@ -1,5 +1,7 @@
-require 'faraday'
-require 'json'
+# frozen_string_literal: true
+
+require "faraday"
+require "json"
 
 module Bloomerang
   class Base
@@ -12,8 +14,8 @@ module Bloomerang
       connection = Faraday.new(
         url: API_URL,
         headers: {
-          'Content-Type' => 'application/json',
-          'X-API-Key' => API_KEY
+          "Content-Type" => "application/json",
+          "X-API-Key" => API_KEY
         },
         params: params
       )
@@ -27,8 +29,8 @@ module Bloomerang
       connection = Faraday.new(
         url: API_URL,
         headers: {
-          'Content-Type' => 'application/json',
-          'X-API-Key' => API_KEY
+          "Content-Type" => "application/json",
+          "X-API-Key" => API_KEY
         },
         params: params
       )

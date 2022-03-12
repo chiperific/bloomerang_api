@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Bloomerang
   class Transaction < Base
     def all

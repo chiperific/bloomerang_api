@@ -1,9 +1,11 @@
-require_relative 'base'
+# frozen_string_literal: true
+
+require_relative "base"
 
 module Bloomerang
   class Constituent < Base
     def all
-      get('constituents')
+      get("constituents")
     end
 
     def show(id)
@@ -11,12 +13,12 @@ module Bloomerang
     end
 
     def search(query)
-      get('constituents/search', search: query)
+      get("constituents/search", search: query)
     end
 
     # Creates a new Constituent. In most cases, the method "merge" may be more useful.
     def create(body)
-      post('constituent', {}, body)
+      post("constituent", {}, body)
     end
 
     # Although called merge by Bloomerang, this is more of a specialized upsert.
@@ -29,8 +31,7 @@ module Bloomerang
     # this endpoint does not accept SecondaryAddresses, SecondaryEmails, or
     # SecondaryPhones and you will receive an exception if you pass those in.""
     def merge(body)
-      post('constituent/merge', {}, body)
+      post("constituent/merge", {}, body)
     end
   end
 end
-
