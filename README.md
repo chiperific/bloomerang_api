@@ -6,7 +6,9 @@ Not all methods available in the API are currently implemented in this gem. If y
 
 ## Implemented Methods
 
-...to be added later...
+* Constituent
+* Fund
+* Transaction
 
 ## Installation
 
@@ -26,7 +28,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Set your Bloomerang API Key in ENV `BLOOMERANG_API_KEY`
+
+Then, perform a request.
+
+Sample GET: `Bloomerang::Constituent.new.all`
+
+Sample POST: `Bloomerang::Constituent.new.merge(body)`
+
+For POST requests and others requiring a body, refer to the [Bloomerang API documentation](https://bloomerang.co/product/integrations-data-management/api/rest-api) for the format required.
 
 ## Development
 
@@ -36,7 +46,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/bloomerang. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/bloomerang/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/mcsweeneys/bloomerang. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/mcsweeneys/bloomerang/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -44,4 +54,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Bloomerang project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/bloomerang/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Bloomerang project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/mcsweeneys/bloomerang/blob/main/CODE_OF_CONDUCT.md).
