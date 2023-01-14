@@ -69,6 +69,7 @@ module Bloomerang
     # orderBy         string, Available values : Id (default), CreatedDate, LastModifiedDate
     # orderDirection  string, Available values : Asc, Desc
     def all(params)
+      # TODO: BREAKING CHANGE: used to accept no arguments
       get("constituents", params)
     end
 
