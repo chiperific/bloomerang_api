@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "base"
+
 module Bloomerang
   ## Bloomerang::Campaign
   # Id        integer($int64)
