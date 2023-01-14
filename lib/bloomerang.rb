@@ -9,6 +9,9 @@ require_relative "bloomerang/campaign"
 
 require_relative "bloomerang/address"
 
+
+require_relative "bloomerang/appeal"
+
 module Bloomerang
   class Error < StandardError; end
 end
