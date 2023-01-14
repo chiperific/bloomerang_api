@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative "base"
 
 module Bloomerang
@@ -27,8 +28,8 @@ module Bloomerang
     # Params:
     # type      string, Available values: Constituent, Transaction, Interaction, Note, Benevon
     # isActive  boolean, Default value: true
-    def fields(type, is_active = true)
-      get("/customFields/#{type}/", { isActive: is_active })
+    def fields(type, params = {})
+      get("/customFields/#{type}/", params)
     end
 
     ### Fetch CustomValues by type
@@ -37,8 +38,8 @@ module Bloomerang
     # Params:
     # type      string, Available values : Constituent, Transaction, Interaction, Note, Benevon
     # isActive  boolean, Default value: true
-    def values(type, is_active = true)
-      get("/customValues/#{type}/", { isActive: is_active })
+    def values(type, params = {})
+      get("/customValues/#{type}/", params)
     end
 
     ### Fetch CustomValues by type for the given field
@@ -48,8 +49,8 @@ module Bloomerang
     # type      string, Available values : Constituent, Transaction, Interaction, Note, Benevon
     # fieldId   integer
     # isActive  boolean, Default value: true
-    def values_by_field(type, field_id, is_active = true)
-      get("/customValues/#{type}/#{field_id}", { isActive: is_active })
+    def values_by_field(type, field_id, params = {})
+      get("/customValues/#{type}/#{field_id}", params)
     end
   end
 end
