@@ -17,12 +17,12 @@ module Bloomerang
     API_URL = "https://api.bloomerang.co/v2"
     API_KEY = ENV["BLOOMERANG_API_KEY"]
 
-    def get(path, params)
+    def get(path, params = {})
       response = connection(params).get(path)
       JSON.parse response.body
     end
 
-    def delete(path, params)
+    def delete(path, params = {})
       response = connection(params).delete(path)
       JSON.parse response.body
     end
@@ -39,7 +39,7 @@ module Bloomerang
 
     private
 
-    def connection(params = {})
+    def connection(params)
       Faraday.new(
         url: API_URL,
         headers: {
