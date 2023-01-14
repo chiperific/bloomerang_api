@@ -50,5 +50,14 @@ module Bloomerang
     def create(body)
       post("campaign", body)
     end
+
+    ### Refresh summaries
+    # Refreshes campaign goals
+    # Returns: JSON: The list of campaigns that are active and have a non-zero goal.
+    #
+    ## Params: none
+    def refresh_summaries
+      get("campaigns/refreshsummaries")
+    end
   end
 end
