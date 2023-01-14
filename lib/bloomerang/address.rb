@@ -26,7 +26,7 @@ module Bloomerang
     # take        integer, default: 50, simple paging system
     # constituent array[integer], separated by pipes: "1|2|3"
     # id          array[integer], separated by pipes: "1|2|3"
-    def all(params)
+    def all(params = {})
       get("addresses", params)
     end
 
