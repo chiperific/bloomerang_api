@@ -9,5 +9,10 @@ Style/StringLiteralsInInterpolation:
   Enabled: true
   EnforcedStyle: double_quotes
 
+  rubocop: warning
+
+Style/OptionalBooleanParameter:
+  Enabled: false
+
 Layout/LineLength:
   Max: 120
