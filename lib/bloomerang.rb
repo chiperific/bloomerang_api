@@ -21,7 +21,7 @@ require_relative "bloomerang/relationship"
 require_relative "bloomerang/soft_credit"
 require_relative "bloomerang/task"
 require_relative "bloomerang/transaction"
-# require_relative "bloomerang/tribute"
+require_relative "bloomerang/tribute"
 # require_relative "bloomerang/user"
 # require_relative "bloomerang/wallet_item"
 
