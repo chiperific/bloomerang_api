@@ -42,7 +42,7 @@ module Bloomerang
     # skip            integer, default: 0,  simple paging system
     # take            integer, default: 50, simple paging system
     # id              array[integer], separated by pipes: "1|2|3"
-    def show_installments(id, params = {})
+    def fetch_installments(id, params = {})
       get("pledge/#{id}/installments", params)
     end
 
@@ -68,7 +68,7 @@ module Bloomerang
     # skip            integer, default: 0,  simple paging system
     # take            integer, default: 50, simple paging system
     # id              array[integer], separated by pipes: "1|2|3"
-    def show_payments(id, params = {})
+    def fetch_payments(id, params = {})
       get("pledge/#{id}/payments", params)
     end
 
@@ -79,7 +79,7 @@ module Bloomerang
     # skip            integer, default: 0,  simple paging system
     # take            integer, default: 50, simple paging system
     # id              array[integer], separated by pipes: "1|2|3"
-    def show_failed_payments(id, params = {})
+    def fetch_failed_payments(id, params = {})
       get("pledge/#{id}/paymentFailures", params)
     end
 

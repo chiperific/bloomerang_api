@@ -54,7 +54,6 @@ module Bloomerang
   # AuditTrail                    AuditTrail (Object)
   class Constituent < Base
     # for backwards compatability
-    alias merge create
 
     ### Fetch all constituents
     ## https://bloomerang.co/product/integrations-data-management/api/rest-api/#/Constituents/get_constituents
@@ -68,7 +67,7 @@ module Bloomerang
     # id              array[integer], separated by pipes: "1|2|3"
     # orderBy         string, Available values : Id (default), CreatedDate, LastModifiedDate
     # orderDirection  string, Available values : Asc, Desc
-    def all(params = {})
+    def fetch(params = {})
       # TODO: BREAKING CHANGE: used to accept no arguments
       get("constituents", params)
     end
@@ -78,7 +77,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def show(id)
+    def get(id)
       get("constituent/#{id}")
     end
 
@@ -91,7 +90,7 @@ module Bloomerang
     # id      integer
     #
     # Returns: array of Relationships
-    def show_relationships(id, params = {})
+    def fetch_relationships(id, params = {})
       get("constituent/#{id}/relationships", params)
     end
 
@@ -105,7 +104,7 @@ module Bloomerang
     # id      integer
     #
     # Returns: paged list of TimelineEntrySummary models
-    def show_timeline(id, params = {})
+    def fetch_timeline(id, params = {})
       get("constituent/#{id}/timeline", params)
     end
 
@@ -127,7 +126,6 @@ module Bloomerang
     # take    integer, default: 50, simple paging system
     # search  string, searches on Full Name with
     def search(params = {})
-      # TODO: BREAKING CHANGE: query changed to params
       get("constituents/search", params)
     end
 

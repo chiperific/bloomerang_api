@@ -3,22 +3,20 @@
 require_relative "lib/bloomerang/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "bloomerang"
+  spec.name = "bloomerang_api"
   spec.version = Bloomerang::VERSION
-  spec.authors = ["Nikky Southerland"]
-  spec.email = ["nikky@mcsweeneys.net"]
+  spec.authors = ["Chiperific"]
+  spec.email = ["chiperific@gmail.com"]
 
-  spec.summary = "Unofficial Ruby client for Bloomerang"
-  spec.description = "Unofficial Ruby client for bloomerang.co, a donor management platform"
-  spec.homepage = "https://github.com/mcsweeneys/bloomerang"
+  spec.summary = "Unofficial Ruby API client for Bloomerang.co"
+  spec.description = "Unofficial Ruby API client for bloomerang.co, a donor management platform"
+  spec.homepage = "https://github.com/chiperific/bloomerang"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
-
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/mcsweeneys/bloomerang"
-  spec.metadata["changelog_uri"] = "https://github.com/mcsweeneys/bloomerang/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/chiperific/bloomerang_api"
+  spec.metadata["changelog_uri"] = "https://github.com/chiperific/bloomerang_api/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

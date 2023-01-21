@@ -31,9 +31,6 @@ module Bloomerang
   # RefundIds                 array[integer], The IDs of the refunds on this transaction. Currently, there will be zero or one refunds. This is an array to allow partial and multiple refunds in the future if needed.
   # AuditTrail                AuditTrail  (object)
   class Transaction < Base
-    # for backwards compatability
-    alias get_designations all_designations
-
     ### Fetch all transactions
     ## https://bloomerang.co/product/integrations-data-management/api/rest-api/#/Transactions/get_transactions
     #
@@ -48,7 +45,7 @@ module Bloomerang
     # maxAmount           number, Filters results based on the transaction's amount (inclusive).
     # orderBy         string, Available values : Id (default), CreatedDate, LastModifiedDate
     # orderDirection  string, Available values : Asc, Desc
-    def all(params = {})
+    def fetch(params = {})
       get("transactions", params)
     end
 
@@ -66,7 +63,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def show(id)
+    def get(id)
       get("transaction/#{id}")
     end
 
@@ -100,7 +97,7 @@ module Bloomerang
     # id                  array[integer], separated by pipes: "1|2|3"
     # orderBy             string, Available values : Id (default), CreatedDate, LastModifiedDate
     # orderDirection      string, Available values : Asc, Desc
-    def all_designations(params = {})
+    def fetch_designations(params = {})
       get("transactions/designations", params)
     end
 
@@ -109,7 +106,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def show_designation(id)
+    def get_designation(id)
       get("transactions/designation/#{id}")
     end
   end

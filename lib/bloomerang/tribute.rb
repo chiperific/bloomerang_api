@@ -22,7 +22,7 @@ module Bloomerang
     # take            integer, default: 50, simple paging system
     # id              array[integer], separated by pipes: "1|2|3", Filters to tributes with the IDs in the list (pipe-separated)
     # isActive        boolean
-    def all(params = {})
+    def fetch(params = {})
       get("tributes", params)
     end
 
@@ -40,7 +40,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def show(id)
+    def get(id)
       get("tribute/#{id}")
     end
 

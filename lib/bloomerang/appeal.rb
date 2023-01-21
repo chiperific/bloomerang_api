@@ -19,7 +19,7 @@ module Bloomerang
     # id          array[integer], separated by pipes: "1|2|3"
     # isActive    boolean, Filters to either active or inactive appeals
     # search      string, Filters to appeals with names that match any part of the search string
-    def all(params)
+    def fetch(params)
       get("appeals", params)
     end
 
@@ -28,7 +28,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def show(id)
+    def get(id)
       get("appeal/#{id}")
     end
 

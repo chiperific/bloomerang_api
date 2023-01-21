@@ -28,7 +28,7 @@ module Bloomerang
     # take            integer, default: 50, simple paging system
     # lastModified    string, date in iso8601 format, Filters to constituents last modified after the specified date
     # id              array[integer], separated by pipes: "1|2|3"
-    def all(params = {})
+    def fetch(params = {})
       get("households", params)
     end
 
@@ -37,7 +37,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def show(id)
+    def get(id)
       get("household/#{id}")
     end
 

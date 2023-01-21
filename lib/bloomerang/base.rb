@@ -5,14 +5,7 @@ require "json"
 
 module Bloomerang
   ## Bloomerang::Base
-  # Primary interface for Faraday #get, #post, #put
-  #
-  # TODO: DECIDE should body.to_json be removed
-  # and instead expect body to already be JSON?
-  # or use in-memory Models instead of JSON?
-  #
-  # TODO: DECIDE should the class raise errors if
-  # path, params and body are blank/nil/bad?
+  # Primary interface for Faraday
   class Base
     API_URL = "https://api.bloomerang.co/v2"
     API_KEY = ENV["BLOOMERANG_API_KEY"]

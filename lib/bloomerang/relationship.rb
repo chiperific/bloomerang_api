@@ -31,7 +31,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def show(id)
+    def get(id)
       get("relationship/#{id}")
     end
 
@@ -64,7 +64,7 @@ module Bloomerang
     # id              array[integer], separated by pipes: "1|2|3"
     # name            array[string], Filters to relationship roles with the names in the list (pipe-separated)
     # isActive        boolean, Filters to either active or inactive relationship roles
-    def all_roles(params = {})
+    def fetch_roles(params = {})
       get("relationshiproles", params)
     end
 
@@ -73,7 +73,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def show_role(role_id)
+    def get_role(role_id)
       get("relationshiprole/#{role_id}")
     end
   end

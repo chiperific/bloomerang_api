@@ -20,7 +20,7 @@ module Bloomerang
     # id            array[integer], separated by pipes: "1|2|3"
     # isActive      boolean
     # search        string, Filters to funds with names that match any part of the search string
-    def all(params = {})
+    def fetch(params = {})
       get("funds", params)
     end
 
@@ -29,7 +29,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def show(id)
+    def get(id)
       get("fund/#{id}")
     end
 

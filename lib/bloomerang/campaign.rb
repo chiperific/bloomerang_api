@@ -26,7 +26,7 @@ module Bloomerang
     # IsActive  boolean
     # search    string, returns matches on any part of name
     # hasGoal   boolean, have either non-zero-dollar or zero-dollar goals
-    def all(params = {})
+    def fetch(params = {})
       get("campaigns", params)
     end
 
@@ -35,7 +35,7 @@ module Bloomerang
     #
     # Params:
     # id integer
-    def show(id)
+    def get(id)
       get("campaign/#{id}")
     end
 

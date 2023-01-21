@@ -21,7 +21,7 @@ module Bloomerang
     # id              array[integer], separated by pipes: "1|2|3"
     # orderBy         string, Available values : Id (default), CreatedDate, LastModifiedDate
     # orderDirection  string, Available values : Asc, Desc
-    def all(params = {})
+    def fetch(params = {})
       get("notes", params)
     end
 
@@ -39,7 +39,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def show(id)
+    def get(id)
       get("note/#{id}")
     end
 
