@@ -7,15 +7,15 @@ _Note: you must be a Bloomerang customer with an active account to access the AP
 
 This gem is based upon the initial work of [@allynfolksjr](https://github.com/allynfolksjr) at https://github.com/mcsweeneys/bloomerang. They added limited endpoint support for:
 
-* Constituent
-* Fund
-* Transaction
+  * Constituent
+  * Fund
+  * Transaction
 
 This gem adds support for [all other endpoints](https://github.com/chiperific/bloomerang_api/tree/main/lib/bloomerang), _except_:
 
-* Processor
-* User
-* WalletItem
+  * Processor
+  * User
+  * WalletItem
 
 
 ## Installation for Ruby on Rails:
@@ -30,35 +30,34 @@ And then execute:
 
 `$ bundle install`
 
-Or install it yourself as:
-
-`$ gem install bloomerang_api`
-
 ## Setup
 
 1. Get your Bloomerang API Key:
 
-- Generate your v2.0 API key from [your Bloomerang user settings](https://crm.bloomerang.co/Settings/User/Edit)
+  - Generate your v2.0 API key from [your Bloomerang user settings](https://crm.bloomerang.co/Settings/User/Edit)
 
 2. Add your API key to your app using a secure method:
 
-- [Credentials](https://edgeguides.rubyonrails.org/security.html#custom-credentials) strategy (preferred):
-    ```yaml
-    # ./config/credentials.yml
-    bloomerang:
-      api_key: myapikey
-    ```
+  - [Credentials](https://edgeguides.rubyonrails.org/security.html#custom-credentials) strategy (preferred):
 
-- [dotenv](https://github.com/bkeepers/dotenv) strategy:
-    ```ruby
-    # ./.env
-    BLOOMERANG_API_KEY=myapikey
-    ```
+      ```yaml
+      # ./config/credentials.yml
+      bloomerang:
+        api_key: myapikey
+      ```
 
-- [ENV](https://blog.devgenius.io/what-are-environment-variables-in-rails-6f7e97a0b164) strategy:
-    ```bash
-    $ export BLOOMERANG_API_KEY=myapikey
-    ```
+  - [dotenv](https://github.com/bkeepers/dotenv) strategy:
+
+      ```ruby
+      # ./.env
+      BLOOMERANG_API_KEY=myapikey
+      ```
+
+  - [ENV](https://blog.devgenius.io/what-are-environment-variables-in-rails-6f7e97a0b164) strategy:
+
+      ```bash
+      $ export BLOOMERANG_API_KEY=myapikey
+      ```
 
 3. Run the generator to create the initializer file:
 
@@ -90,28 +89,28 @@ Bloomerang.configure do |config|
 end
 ```
 
+## Usage
+
 ### WARNING: NO SANDBOX, PRODUCTION ONLY
 
 Bloomerang does not offer a sandbox environment or any way to test API calls without actually affecting your production data.
 
-__Any POST, PUT and DELETE requests will be run against your live Bloomerang account!__
+## Any POST, PUT and DELETE requests will be run against your live Bloomerang account!
 
 [Please encourage Bloomerang](https://crm.bloomerang.co/Home/FeaturesPortal) to address this issue.
 
-## Usage
-
-The standard structure of all endpoints is as follows:
+### Standard structure:
 
 - Reading records:
-    - `#fetch`: a GET request that returns a batch of records, 50 by default (see paging/batching below for more)
-    - `#show`: a GET request returns a single record that matches the provided ID
+  - `#fetch`: a GET request that returns a batch of records, 50 by default (see paging/batching below for more)
+  - `#show`: a GET request returns a single record that matches the provided ID
 
 - Creating, updating and deleting records:
-    - `#create`: a POST request that creates a record based on the provided `body` variable.
-    - `#update`: a PUT request that updates a record
-    - `#delete`: a DELETE request that deletes a record
+  - `#create`: a POST request that creates a record based on the provided `body` variable.
+  - `#update`: a PUT request that updates a record
+  - `#delete`: a DELETE request that deletes a record
 
-__It is highly recommended to reference the [documentation](https://bloomerang.co/product/integrations-data-management/api/rest-api) to identify required and allowed attributes.__
+  __It is highly recommended to reference the [documentation](https://bloomerang.co/product/integrations-data-management/api/rest-api) to identify required and allowed attributes.__
 
 Some `Class`es have custom endpoints. For example:
 
@@ -121,12 +120,12 @@ Some `Class`es have custom endpoints. For example:
 - `Bloomerang::Constituent.search`
 - `Bloomerang::CustomField.categories`
 
-You can check [the specific class](https://github.com/chiperific/bloomerang_api/tree/main/lib/bloomerang) to check for availble methods.
+Check [the specific class](https://github.com/chiperific/bloomerang_api/tree/main/lib/bloomerang) for availble methods.
 
 ### GET requests:
-Most Bloomerang GET requests have URL parameters that can be set.
+Most GET requests have URL parameters that can be set.
 
-Each `Class` documents the available parameters you can append to `GET` requests, you can also check each endpoints [documentation](https://bloomerang.co/product/integrations-data-management/api/rest-api)
+[Each `Class`](https://github.com/chiperific/bloomerang_api/tree/main/lib/bloomerang) lists the available parameters you can append to `GET` requests, you can also check each endpoints' [documentation](https://bloomerang.co/product/integrations-data-management/api/rest-api).
 
 #### Paging / Batching support:
 
@@ -146,12 +145,11 @@ The result will include these keys:
 
 ```json
 {
-  "Total": 1850,
-  "TotalFiltered": 1850,
+  "Total": 1850, // All records in the database
+  "TotalFiltered": 1850, // All records that match query/filters
   "Start": 0,
   "ResultCount": 50,
-  "Results": [
-    { ...
+  "Results": []
 ```
 
 `"Start"` should be equal to `skip` and `"ResultCount` should be equal to `take`.
@@ -160,25 +158,21 @@ Increase your `skip` value by your `take` value to get the next page/batch of re
 
 ```ruby
 params = { skip: 50, take: 50 }
-first_fifty_constituents = Bloomerang::Constituent.fetch(params)
+next_fifty_constituents = Bloomerang::Constituent.fetch(params)
 ```
 
 ```json
 {
-  "Total": 1850,
-  "TotalFiltered": 1850,
+  "Total": 1850, // All records in the database
+  "TotalFiltered": 1850, // All records that match query/filters
   "Start": 50,
   "ResultCount": 50,
-  "Results": [
-    { ...
+  "Results": []
 ```
 
 ### POST/PUT/DELETE requests:
-__WARNING: Bloomerang has no test/sandbox feature!__
 
-Any POST, PUT and DELETE requests will be run against your live Bloomerang account!
-
-__Proceed with caution!__
+#### WARNING: Bloomerang has no test/sandbox feature! Any POST, PUT and DELETE requests will be run against your live Bloomerang account! Proceed with caution!
 
 
 `#update`, and `#delete` methods require a record ID and a `body` object. Not all `Class`es implement a `#delete` endpoint.
