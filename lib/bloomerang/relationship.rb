@@ -22,7 +22,7 @@ module Bloomerang
     #
     # Params:
     # body  JSON object, see API for fields
-    def create(body)
+    def self.create(body)
       post("relationship", {}, body)
     end
 
@@ -31,7 +31,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def get(id)
+    def self.show(id)
       get("relationship/#{id}")
     end
 
@@ -41,7 +41,7 @@ module Bloomerang
     # Params:
     # id    integer
     # body  JSON object, see API for fields
-    def update(id, body)
+    def self.update(id, body)
       put("relationship/#{id}", {}, body)
     end
 
@@ -50,7 +50,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def delete(id)
+    def self.delete(id)
       delete("relationship/#{id}")
     end
 
@@ -64,7 +64,7 @@ module Bloomerang
     # id              array[integer], separated by pipes: "1|2|3"
     # name            array[string], Filters to relationship roles with the names in the list (pipe-separated)
     # isActive        boolean, Filters to either active or inactive relationship roles
-    def fetch_roles(params = {})
+    def self.fetch_roles(params = {})
       get("relationshiproles", params)
     end
 
@@ -73,7 +73,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def get_role(role_id)
+    def self.get_role(role_id)
       get("relationshiprole/#{role_id}")
     end
   end

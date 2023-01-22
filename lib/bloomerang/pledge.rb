@@ -42,7 +42,7 @@ module Bloomerang
     # skip            integer, default: 0,  simple paging system
     # take            integer, default: 50, simple paging system
     # id              array[integer], separated by pipes: "1|2|3"
-    def fetch_installments(id, params = {})
+    def self.fetch_installments(id, params = {})
       get("pledge/#{id}/installments", params)
     end
 
@@ -57,7 +57,7 @@ module Bloomerang
     # frequency             string, Available values : Weekly, EveryOtherWeekly, TwiceMonthly, Monthly, EveryOtherMonthly, Quarterly, Yearly, Custom
     # day1                  integer, Day1 & Day2 are only used with the TwiceMonthly frequency. If specified, day1 must be equal to the day value in firstInstallmentDate. If not specified, day1 will be set to the day value in firstInstallmentDate.
     # day2                  integer, Day1 & Day2 are only used with the TwiceMonthly frequency
-    def generate_installments(params = {})
+    def self.generate_installments(params = {})
       get("pledge/generateInstallments", params)
     end
 
@@ -68,7 +68,7 @@ module Bloomerang
     # skip            integer, default: 0,  simple paging system
     # take            integer, default: 50, simple paging system
     # id              array[integer], separated by pipes: "1|2|3"
-    def fetch_payments(id, params = {})
+    def self.fetch_payments(id, params = {})
       get("pledge/#{id}/payments", params)
     end
 
@@ -79,7 +79,7 @@ module Bloomerang
     # skip            integer, default: 0,  simple paging system
     # take            integer, default: 50, simple paging system
     # id              array[integer], separated by pipes: "1|2|3"
-    def fetch_failed_payments(id, params = {})
+    def self.fetch_failed_payments(id, params = {})
       get("pledge/#{id}/paymentFailures", params)
     end
 
@@ -88,7 +88,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def write_off(id)
+    def self.write_off(id)
       post("pledge/#{id}/writeOff")
     end
   end

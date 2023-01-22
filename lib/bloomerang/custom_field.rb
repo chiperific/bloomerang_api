@@ -18,7 +18,7 @@ module Bloomerang
     #
     # Params:
     # type  string, Available values: Constituent, Transaction, Interaction, Note, Benevon
-    def categories(type)
+    def self.categories(type)
       get("/customFieldCategories/#{type}/")
     end
 
@@ -28,7 +28,7 @@ module Bloomerang
     # Params:
     # type      string, Available values: Constituent, Transaction, Interaction, Note, Benevon
     # isActive  boolean, Default value: true
-    def fields(type, params = {})
+    def self.fields(type, params = {})
       get("/customFields/#{type}/", params)
     end
 
@@ -38,7 +38,7 @@ module Bloomerang
     # Params:
     # type      string, Available values : Constituent, Transaction, Interaction, Note, Benevon
     # isActive  boolean, Default value: true
-    def values(type, params = {})
+    def self.values(type, params = {})
       get("/customValues/#{type}/", params)
     end
 
@@ -49,7 +49,7 @@ module Bloomerang
     # type      string, Available values : Constituent, Transaction, Interaction, Note, Benevon
     # fieldId   integer
     # isActive  boolean, Default value: true
-    def values_by_field(type, field_id, params = {})
+    def self.values_by_field(type, field_id, params = {})
       get("/customValues/#{type}/#{field_id}", params)
     end
   end

@@ -26,7 +26,7 @@ module Bloomerang
     # take        integer, default: 50, simple paging system
     # constituent array[integer], separated by pipes: "1|2|3"
     # id          array[integer], separated by pipes: "1|2|3"
-    def fetch(params = {})
+    def self.fetch(params = {})
       get("addresses", params)
     end
 
@@ -35,7 +35,7 @@ module Bloomerang
     #
     ## Params:
     # id integer
-    def get(id)
+    def self.show(id)
       get("addresses/#{id}")
     end
 
@@ -44,7 +44,7 @@ module Bloomerang
     #
     # Params:
     # body  see API for fields
-    def create(body)
+    def self.create(body)
       post("address", {}, body)
     end
 
@@ -54,7 +54,7 @@ module Bloomerang
     # Params:
     # id    integer
     # body  see API for fields
-    def update(id, body)
+    def self.update(id, body)
       put("address/#{id}", {}, body)
     end
 
@@ -63,7 +63,7 @@ module Bloomerang
     #
     # Params:
     # id   integer
-    def delete(id)
+    def self.delete(id)
       delete("address/#{id}", {})
     end
   end

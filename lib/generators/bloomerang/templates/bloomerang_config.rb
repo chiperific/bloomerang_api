@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "bloomerang"
+
 Bloomerang.configure do |config|
   ### Set your Bloomerang API key:
   # Generate your v2.0 API key from your Bloomerang user settings:

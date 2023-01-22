@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require_relative "bloomerang/version"
-require_relative "bloomerang/base"
 require_relative "bloomerang/configuration"
+require_relative "bloomerang/base"
 
 require_relative "bloomerang/address"
 require_relative "bloomerang/appeal"
@@ -34,7 +34,11 @@ module Bloomerang
     @configuration ||= Configuration.new
   end
 
-  def self.configure(&block)
+  def self.reset
+    @configuration = Configuration.new
+  end
+
+  def self.configure(&_block)
     yield(configuration)
   end
 end

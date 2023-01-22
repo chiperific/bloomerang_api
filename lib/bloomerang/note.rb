@@ -21,7 +21,7 @@ module Bloomerang
     # id              array[integer], separated by pipes: "1|2|3"
     # orderBy         string, Available values : Id (default), CreatedDate, LastModifiedDate
     # orderDirection  string, Available values : Asc, Desc
-    def fetch(params = {})
+    def self.fetch(params = {})
       get("notes", params)
     end
 
@@ -30,7 +30,7 @@ module Bloomerang
     #
     # Params:
     # body  JSON object, see API for fields
-    def create(body)
+    def self.create(body)
       post("note", {}, body)
     end
 
@@ -39,7 +39,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def get(id)
+    def self.show(id)
       get("note/#{id}")
     end
 
@@ -49,7 +49,7 @@ module Bloomerang
     # Params:
     # id    integer
     # body  JSON object, see API for fields
-    def update(id, body)
+    def self.update(id, body)
       put("note/#{id}", {}, body)
     end
 
@@ -58,7 +58,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def delete(id)
+    def self.delete(id)
       delete("note/#{id}")
     end
   end
