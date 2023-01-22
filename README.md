@@ -95,9 +95,11 @@ end
 
 Bloomerang does not offer a sandbox environment or any way to test API calls without actually affecting your production data.
 
-## Any POST, PUT and DELETE requests will be run against your live Bloomerang account!
-
 [Please encourage Bloomerang](https://crm.bloomerang.co/Home/FeaturesPortal) to address this issue.
+
+***Any POST, PUT and DELETE requests will be run against your live Bloomerang account!***
+
+:point_up_2::point_up_2::point_up_2::point_up_2::point_up_2::point_up_2::point_up_2::point_up_2:
 
 ### Standard structure:
 
@@ -120,7 +122,7 @@ Some `Class`es have custom endpoints. For example:
 - `Bloomerang::Constituent.search`
 - `Bloomerang::CustomField.categories`
 
-Check [the specific class](https://github.com/chiperific/bloomerang_api/tree/main/lib/bloomerang) for availble methods.
+Check [the specific class](https://github.com/chiperific/bloomerang_api/tree/main/lib/bloomerang) for available methods.
 
 ### GET requests:
 Most GET requests have URL parameters that can be set.
@@ -172,7 +174,7 @@ next_fifty_constituents = Bloomerang::Constituent.fetch(params)
 
 ### POST/PUT/DELETE requests:
 
-#### WARNING: Bloomerang has no test/sandbox feature! Any POST, PUT and DELETE requests will be run against your live Bloomerang account! Proceed with caution!
+***WARNING: Bloomerang has no test/sandbox feature! Any POST, PUT and DELETE requests will be run against your live Bloomerang account! Proceed with caution!***
 
 
 `#update`, and `#delete` methods require a record ID and a `body` object. Not all `Class`es implement a `#delete` endpoint.
