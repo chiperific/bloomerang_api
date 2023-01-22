@@ -9,7 +9,7 @@ module Bloomerang
 
       desc "Copy Bloomerang initializer file"
       def create_initializer_file
-        copy_file "../templates/bloomerang_config.rb", "config/initializers/bloomerang.rb"
+        copy_file "bloomerang_config.rb", "config/initializers/bloomerang.rb"
       end
     end
   end
