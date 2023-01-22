@@ -4,7 +4,9 @@ require "rails/generators/base"
 
 module Bloomerang
   module Generators
-    class InitializeGenerator < Rails::Generators::Base
+    class InitializerGenerator < Rails::Generators::Base
+      source_root File.expand_path("../templates", __FILE__)
+
       desc "Copy Bloomerang initializer file"
       def create_initializer_file
         copy_file "../templates/bloomerang_config.rb", "config/initializers/bloomerang.rb"
