@@ -45,7 +45,7 @@ module Bloomerang
     # maxAmount           number, Filters results based on the transaction's amount (inclusive).
     # orderBy         string, Available values : Id (default), CreatedDate, LastModifiedDate
     # orderDirection  string, Available values : Asc, Desc
-    def fetch(params = {})
+    def self.fetch(params = {})
       get("transactions", params)
     end
 
@@ -54,7 +54,7 @@ module Bloomerang
     #
     # Params:
     # body  JSON object, see API for fiends
-    def create(body)
+    def self.create(body)
       post("transaction", {}, body)
     end
 
@@ -63,7 +63,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def get(id)
+    def self.show(id)
       get("transaction/#{id}")
     end
 
@@ -73,7 +73,7 @@ module Bloomerang
     # Params:
     # id    integer
     # body  JSON object, see API for fields
-    def update(id, body)
+    def self.update(id, body)
       put("transaction/#{id}", {}, body)
     end
 
@@ -82,7 +82,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def delete(id)
+    def self.delete(id)
       delete("transaction/#{id}")
     end
 
@@ -97,7 +97,7 @@ module Bloomerang
     # id                  array[integer], separated by pipes: "1|2|3"
     # orderBy             string, Available values : Id (default), CreatedDate, LastModifiedDate
     # orderDirection      string, Available values : Asc, Desc
-    def fetch_designations(params = {})
+    def self.fetch_designations(params = {})
       get("transactions/designations", params)
     end
 
@@ -106,7 +106,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def get_designation(id)
+    def self.get_designation(id)
       get("transactions/designation/#{id}")
     end
   end

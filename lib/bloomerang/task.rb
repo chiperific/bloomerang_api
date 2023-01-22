@@ -33,7 +33,7 @@ module Bloomerang
     # id              array[integer], separated by pipes: "1|2|3"
     # orderBy         string, Available values : Id (default), CreatedDate, LastModifiedDate
     # orderDirection  string, Available values : Asc, Desc
-    def fetch(params = {})
+    def self.fetch(params = {})
       get("tasks", params)
     end
 
@@ -42,7 +42,7 @@ module Bloomerang
     #
     # Params:
     # body  JSON object, see API for fields
-    def create(body)
+    def self.create(body)
       post("task", {}, body)
     end
 
@@ -51,7 +51,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def get(id)
+    def self.show(id)
       get("task/#{id}")
     end
 
@@ -61,7 +61,7 @@ module Bloomerang
     # Params:
     # id    integer
     # body  JSON object, see API for fields
-    def update(id, body)
+    def self.update(id, body)
       put("task/#{id}", {}, body)
     end
 
@@ -70,7 +70,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def delete(id)
+    def self.delete(id)
       delete("task/#{id}")
     end
 
@@ -81,7 +81,7 @@ module Bloomerang
     # id                  integer
     # saveAsInteraction   boolean, True to create an interaction from the task; must be false if the task does not have a constituent
     # completedDate       string($date), default: Today, iso8601 format
-    def complete(id, params = {})
+    def self.complete(id, params = {})
       put("task/#{id}/complete", params)
     end
   end

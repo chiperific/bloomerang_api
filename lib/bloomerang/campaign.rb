@@ -26,7 +26,7 @@ module Bloomerang
     # IsActive  boolean
     # search    string, returns matches on any part of name
     # hasGoal   boolean, have either non-zero-dollar or zero-dollar goals
-    def fetch(params = {})
+    def self.fetch(params = {})
       get("campaigns", params)
     end
 
@@ -35,7 +35,7 @@ module Bloomerang
     #
     # Params:
     # id integer
-    def get(id)
+    def self.show(id)
       get("campaign/#{id}")
     end
 
@@ -45,7 +45,7 @@ module Bloomerang
     ## Params:
     # id   integer
     # body JSON object, see API for fields
-    def update(id, body)
+    def self.update(id, body)
       put("campaign/#{id}", {}, body)
     end
 
@@ -54,7 +54,7 @@ module Bloomerang
     #
     ## Params:
     # body JSON object, see API for fields
-    def create(body)
+    def self.create(body)
       post("campaign", {}, body)
     end
 
@@ -64,7 +64,7 @@ module Bloomerang
     # Returns: JSON: The list of campaigns that are active and have a non-zero goal.
     #
     ## Params: none
-    def refresh_summaries
+    def self.refresh_summaries
       get("campaigns/refreshsummaries")
     end
   end

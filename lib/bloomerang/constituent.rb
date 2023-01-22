@@ -53,8 +53,6 @@ module Bloomerang
   # CustomValues                  array[Objects], Objects are either OneValueAssignment or MultipleValueAssignments
   # AuditTrail                    AuditTrail (Object)
   class Constituent < Base
-    # for backwards compatability
-
     ### Fetch all constituents
     ## https://bloomerang.co/product/integrations-data-management/api/rest-api/#/Constituents/get_constituents
     #
@@ -67,8 +65,7 @@ module Bloomerang
     # id              array[integer], separated by pipes: "1|2|3"
     # orderBy         string, Available values : Id (default), CreatedDate, LastModifiedDate
     # orderDirection  string, Available values : Asc, Desc
-    def fetch(params = {})
-      # TODO: BREAKING CHANGE: used to accept no arguments
+    def self.fetch(params = {})
       get("constituents", params)
     end
 
@@ -77,7 +74,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def get(id)
+    def self.show(id)
       get("constituent/#{id}")
     end
 
@@ -90,7 +87,7 @@ module Bloomerang
     # id      integer
     #
     # Returns: array of Relationships
-    def fetch_relationships(id, params = {})
+    def self.fetch_relationships(id, params = {})
       get("constituent/#{id}/relationships", params)
     end
 
@@ -104,7 +101,7 @@ module Bloomerang
     # id      integer
     #
     # Returns: paged list of TimelineEntrySummary models
-    def fetch_timeline(id, params = {})
+    def self.fetch_timeline(id, params = {})
       get("constituent/#{id}/timeline", params)
     end
 
@@ -114,7 +111,7 @@ module Bloomerang
     # Params:
     # id    integer
     # body  see API for fields
-    def update_communication_settings(id, body)
+    def self.update_communication_settings(id, body)
       put("/constituent/#{id}/updateCommunicationSettings", {}, body)
     end
 
@@ -125,7 +122,7 @@ module Bloomerang
     # skip    integer, default: 0,  simple paging system
     # take    integer, default: 50, simple paging system
     # search  string, searches on Full Name with
-    def search(params = {})
+    def self.search(params = {})
       get("constituents/search", params)
     end
 
@@ -144,7 +141,7 @@ module Bloomerang
     # there is a create-only endpoint, but
     # given the risk of duplicate records, this should be the default method
     # for create-only over merge-or-create
-    def create(body)
+    def self.create(body)
       # "When merging, the database will look for a possible duplicate defined as a
       # name plus one piece of contact info (address, email, or phone). If a duplicate
       # is found, the data passed in will be merged into an existing constituent.
@@ -167,7 +164,7 @@ module Bloomerang
     # A more secure pattern would be to create the Constituent
     # then use the returned Constituent ID to check for Emails, Addresses and Phones,
     # and add records if necessary
-    def create_with_secondary(body)
+    def self.create_with_secondary(body)
       post("constituent", {}, body)
     end
 
@@ -177,7 +174,7 @@ module Bloomerang
     # Params:
     # id    integer
     # body  see API for fields
-    def update(id, body)
+    def self.update(id, body)
       put("constituent/#{id}", {}, body)
     end
 
@@ -190,7 +187,7 @@ module Bloomerang
     # NOTE: There is a GET version as well,
     # but POST was chosen for future Model usage
     # e.g. body = Constituent.duplicate_check_attributes
-    def find_duplicates(body)
+    def self.find_duplicates(body)
       post("constituent/duplicates", {}, body)
     end
 
@@ -199,7 +196,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def delete(id)
+    def self.delete(id)
       delete("constituent/#{id}")
     end
   end

@@ -28,7 +28,7 @@ module Bloomerang
     # take            integer, default: 50, simple paging system
     # lastModified    string, date in iso8601 format, Filters to constituents last modified after the specified date
     # id              array[integer], separated by pipes: "1|2|3"
-    def fetch(params = {})
+    def self.fetch(params = {})
       get("households", params)
     end
 
@@ -37,7 +37,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def get(id)
+    def self.show(id)
       get("household/#{id}")
     end
 
@@ -48,7 +48,7 @@ module Bloomerang
     # skip    integer, default: 0,  simple paging system
     # take    integer, default: 50, simple paging system
     # search  string, searches on household name and constituent full name, matches any part of string
-    def search(params = {})
+    def self.search(params = {})
       # TODO: BREAKING CHANGE: query changed to params
       Constituent.search(params)
     end
@@ -58,7 +58,7 @@ module Bloomerang
     #
     # Params:
     # body  JSON object, see API for fields
-    def create(body)
+    def self.create(body)
       post("household", {}, body)
     end
 
@@ -68,7 +68,7 @@ module Bloomerang
     # Params:
     # id    integer
     # body  JSON object, see API for fields
-    def update(id, body)
+    def self.update(id, body)
       put("household/#{id}", {}, body)
     end
 
@@ -77,7 +77,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def delete(id)
+    def self.delete(id)
       delete("household/#{id}")
     end
 
@@ -87,7 +87,7 @@ module Bloomerang
     # Params:
     # id    integer
     # body JSON object, see API for fields
-    def update_communication_settings(id, body)
+    def self.update_communication_settings(id, body)
       put("household/#{id}/updateCommunicationSettings", {}, body)
     end
   end

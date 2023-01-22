@@ -20,7 +20,7 @@ module Bloomerang
     # id              array[integer], separated by pipes: "1|2|3"
     # orderBy         string, Available values : Id (default), CreatedDate, LastModifiedDate
     # orderDirection  string, Available values : Asc, Desc
-    def fetch(params = {})
+    def self.fetch(params = {})
       get("softcredits", params)
     end
 
@@ -29,7 +29,7 @@ module Bloomerang
     #
     # Params:
     # body  JSON object, see API for fields
-    def create(body)
+    def self.create(body)
       post("softcredit", {}, body)
     end
 
@@ -38,7 +38,7 @@ module Bloomerang
     #
     # Params
     # id  integer
-    def get(id)
+    def self.show(id)
       get("softcredit/#{id}")
     end
 
@@ -48,7 +48,7 @@ module Bloomerang
     # Params:
     # id    integer
     # body  JSON object, see API for fields
-    def update(id, body)
+    def self.update(id, body)
       put("softcredit/#{id}", {}, body)
     end
 
@@ -57,7 +57,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def delete(id)
+    def self.delete(id)
       delete("softcredit/#{id}")
     end
   end

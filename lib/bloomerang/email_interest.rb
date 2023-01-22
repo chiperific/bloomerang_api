@@ -20,7 +20,7 @@ module Bloomerang
     # take      integer, default: 50, simple paging system
     # id        array[integer], separated by pipes: "1|2|3"
     # isActive  boolean
-    def fetch(params = {})
+    def self.fetch(params = {})
       get("emailInterests", params)
     end
 
@@ -29,7 +29,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def get(id)
+    def self.show(id)
       get("emailInterest/#{id}")
     end
   end

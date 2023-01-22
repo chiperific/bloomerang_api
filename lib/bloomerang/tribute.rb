@@ -22,7 +22,7 @@ module Bloomerang
     # take            integer, default: 50, simple paging system
     # id              array[integer], separated by pipes: "1|2|3", Filters to tributes with the IDs in the list (pipe-separated)
     # isActive        boolean
-    def fetch(params = {})
+    def self.fetch(params = {})
       get("tributes", params)
     end
 
@@ -31,7 +31,7 @@ module Bloomerang
     #
     # Params:
     # body  JSON object, see API for fields
-    def create(body)
+    def self.create(body)
       post("tribute", {}, body)
     end
 
@@ -40,7 +40,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def get(id)
+    def self.show(id)
       get("tribute/#{id}")
     end
 
@@ -50,7 +50,7 @@ module Bloomerang
     # Params:
     # id    integer
     # body  JSON object, see API for fields
-    def update(id, body)
+    def self.update(id, body)
       put("tribute/#{id}", {}, body)
     end
 
@@ -59,7 +59,7 @@ module Bloomerang
     # skip            integer, default: 0,  simple paging system
     # take            integer, default: 50, simple paging system
     # search          string, The text to search (must be at least 3 characters)
-    def search_active(params = {})
+    def self.search_active(params = {})
       get("tributes/search", params)
     end
   end

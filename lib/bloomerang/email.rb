@@ -20,7 +20,7 @@ module Bloomerang
     # take          integer, default: 50, simple paging system
     # constituent   array[integer], separated by pipes: "1|2|3"
     # id            array[integer], separated by pipes: "1|2|3"
-    def fetch(params = {})
+    def self.fetch(params = {})
       get("emails", params)
     end
 
@@ -29,7 +29,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def get(id)
+    def self.show(id)
       get("email/#{id}")
     end
 
@@ -38,7 +38,7 @@ module Bloomerang
     #
     # Params:
     # body  JSON object, see API for fields
-    def create(body)
+    def self.create(body)
       post("email", {}, body)
     end
 
@@ -48,7 +48,7 @@ module Bloomerang
     # Params:
     # id    integer
     # body  JSON object, see API for fields
-    def update(id, body)
+    def self.update(id, body)
       put("email/#{id}", {}, body)
     end
 
@@ -57,7 +57,7 @@ module Bloomerang
     #
     # Params:
     # id  integer
-    def delete(id)
+    def self.delete(id)
       delete("email/#{id}")
     end
   end

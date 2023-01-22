@@ -69,6 +69,8 @@ $ rails generate bloomerang:initializer
 This will create the file `./config/initializers/bloomerang.rb` where you can set your API key:
 
 ```ruby
+require 'bloomerang'
+
 Bloomerang.configure do |config|
   ### Set your Bloomerang API key:
   # Generate your v2.0 API key from your Bloomerang user settings:
@@ -102,7 +104,7 @@ The standard structure of all endpoints is as follows:
 
 - Reading records:
     - `#fetch`: a GET request that returns a batch of records, 50 by default (see paging/batching below for more)
-    - `#get`: a GET request returns a single record that matches the provided ID
+    - `#show`: a GET request returns a single record that matches the provided ID
 
 - Creating, updating and deleting records:
     - `#create`: a POST request that creates a record based on the provided `body` variable.
