@@ -11,7 +11,7 @@ This gem is based upon the initial work of [@allynfolksjr](https://github.com/al
 * Fund
 * Transaction
 
-This gem adds support [__all__ other endpoints](https://github.com/chiperific/bloomerang_api/tree/main/lib/bloomerang), _except_:
+This gem adds support for [all other endpoints](https://github.com/chiperific/bloomerang_api/tree/main/lib/bloomerang), _except_:
 
 * Processor
 * User
