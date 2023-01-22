@@ -1,33 +1,17 @@
 PATH
   remote: .
   specs:
-    bloomerang (0.1.0)
-      faraday
+    bloomerang_api (0.2.0)
+      faraday (>= 2.7)
 
 GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
-    faraday (1.8.0)
-      faraday-em_http (~> 1.0)
-      faraday-em_synchrony (~> 1.0)
-      faraday-excon (~> 1.1)
-      faraday-httpclient (~> 1.0.1)
-      faraday-net_http (~> 1.0)
-      faraday-net_http_persistent (~> 1.1)
-      faraday-patron (~> 1.0)
-      faraday-rack (~> 1.0)
-      multipart-post (>= 1.2, < 3)
+    faraday (2.7.4)
+      faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
-    faraday-em_http (1.0.0)
-    faraday-em_synchrony (1.0.0)
-    faraday-excon (1.1.0)
-    faraday-httpclient (1.0.1)
-    faraday-net_http (1.0.1)
-    faraday-net_http_persistent (1.2.0)
-    faraday-patron (1.0.0)
-    faraday-rack (1.0.0)
-    multipart-post (2.1.1)
+    faraday-net_http (3.0.2)
     parallel (1.21.0)
     parser (3.1.1.0)
       ast (~> 2.4.1)
@@ -55,9 +39,9 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  bloomerang!
+  bloomerang_api!
   rake (~> 13.0)
   rubocop (~> 1.21)
 
 BUNDLED WITH
-   2.2.33
+   2.4.5

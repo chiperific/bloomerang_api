@@ -40,7 +40,31 @@ Or install it yourself as:
 
 - Generate your v2.0 API key from [your Bloomerang user settings](https://crm.bloomerang.co/Settings/User/Edit)
 
-- Set your Bloomerang API Key in ENV `BLOOMERANG_API_KEY`
+2. Add your API key to your app using a secure method:
+
+- [Credentials](https://edgeguides.rubyonrails.org/security.html#custom-credentials) strategy (preferred):
+    ```yaml
+    # ./config/credentials.yml
+    bloomerang:
+      api_key: myapikey
+    ```
+
+- [dotenv](https://github.com/bkeepers/dotenv) strategy:
+    ```ruby
+    # ./.env
+    BLOOMERANG_API_KEY=myapikey
+    ```
+
+- [ENV](https://blog.devgenius.io/what-are-environment-variables-in-rails-6f7e97a0b164) strategy:
+    ```bash
+    $ export BLOOMERANG_API_KEY=myapikey
+    ```
+
+3. Run the generator to create the initializer file:
+
+```bash
+$ rails generate bloomerang:initializer
+```
 
 ### WARNING: NO SANDBOX, PRODUCTION ONLY
 

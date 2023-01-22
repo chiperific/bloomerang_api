@@ -35,6 +35,3 @@
   - fund
   - transaction
 
-- TODO:
-  - initializer to set API_KEY
-

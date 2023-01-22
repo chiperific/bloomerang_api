@@ -1,0 +1,3 @@
+To copy a Bloomerang initializer to your Rails app, which allows setting your API key, just run this command from a terminal:
+
+`rails generate bloomerang:initialize`

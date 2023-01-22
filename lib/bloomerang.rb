@@ -2,6 +2,8 @@
 
 require_relative "bloomerang/version"
 require_relative "bloomerang/base"
+require_relative "bloomerang/configuration"
+
 require_relative "bloomerang/address"
 require_relative "bloomerang/appeal"
 require_relative "bloomerang/campaign"
@@ -27,4 +29,12 @@ require_relative "bloomerang/tribute"
 
 module Bloomerang
   class Error < StandardError; end
+
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
+
+  def self.configure(&block)
+    yield(configuration)
+  end
 end
