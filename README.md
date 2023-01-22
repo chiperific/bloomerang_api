@@ -23,7 +23,7 @@ This gem adds support [__all__ other endpoints](https://github.com/chiperific/bl
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "bloomerang_api", "~> 0.2"
+gem "bloomerang_api", "~> 1.0"
 ```
 
 And then execute:
