@@ -9,21 +9,33 @@ module Bloomerang
   class Base
     def self.get(path, params = {})
       response = connection(params).get(path)
+
+      puts response.env.url
+
       JSON.parse response.body
     end
 
     def self.delete(path, params = {})
       response = connection(params).delete(path)
+
+      puts response.env.url
+
       JSON.parse response.body
     end
 
     def self.post(path, params, body)
       response = connection(params).post(path, body.to_json)
+
+      puts response.env.url
+
       JSON.parse response.body
     end
 
     def self.put(path, params, body)
       response = connection(params).put(path, body.to_json)
+
+      puts response.env.url
+
       JSON.parse response.body
     end
 
@@ -32,7 +44,7 @@ module Bloomerang
 
       def connection(params)
         Faraday.new(
-          url: Bloomerang.configuration.api_url,
+          Bloomerang.configuration.api_url,
           headers: {
             "Content-Type" => "application/json",
             "X-API-Key" => Bloomerang.configuration.api_key

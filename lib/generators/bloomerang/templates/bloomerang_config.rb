@@ -18,4 +18,7 @@ Bloomerang.configure do |config|
   # ENV or dotenv example:
   # Learn about dotenv gem: https://github.com/bkeepers/dotenv
   # config.api_key = ENV["BLOOMERANG_API_KEY"]
+  ### Other available settings:
+  ## api_url: defaults to "https://api.bloomerang.co/v2"
+  # config.api_url = "https://api.bloomerang.co/v2"
 end

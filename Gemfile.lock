@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bloomerang_api (0.2.0)
+    bloomerang_api (1.0.2)
       faraday (>= 2.7)
 
 GEM

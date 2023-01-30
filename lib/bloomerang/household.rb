@@ -49,7 +49,6 @@ module Bloomerang
     # take    integer, default: 50, simple paging system
     # search  string, searches on household name and constituent full name, matches any part of string
     def self.search(params = {})
-      # TODO: BREAKING CHANGE: query changed to params
       Constituent.search(params)
     end
 

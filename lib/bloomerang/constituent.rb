@@ -112,7 +112,7 @@ module Bloomerang
     # id    integer
     # body  see API for fields
     def self.update_communication_settings(id, body)
-      put("/constituent/#{id}/updateCommunicationSettings", {}, body)
+      put("constituent/#{id}/updateCommunicationSettings", {}, body)
     end
 
     ### Search for constituents and households
