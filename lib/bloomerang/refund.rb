@@ -9,7 +9,7 @@ module Bloomerang
   # Date          string($date), iso8601 format
   # Amount        number($currency)
   # AuditTrail    AuditTrail  (object)
-  class Refund
+  class Refund < Base
     ### Fetch all refunds
     ## https://bloomerang.co/product/integrations-data-management/api/rest-api/#/Refunds/get_refunds
     #

@@ -12,7 +12,7 @@ module Bloomerang
   # DataType    CustomFieldDataType (object): string, Enum: [ Currency, Date, Decimal, Text, Year ]
   # PickType    CustomFieldPickType (object): string, Enum: [ Freeform, PickMultiple, PickOne ]
   # SortIndex   integer($int32)
-  class CustomField
+  class CustomField < Base
     ### Fetch CustomField Categories by type
     ## https://bloomerang.co/product/integrations-data-management/api/rest-api/#/Custom%20Fields/get_customFieldCategories__type__
     #
