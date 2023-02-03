@@ -1,0 +1,36 @@
+{
+  "Total": 2,
+  "TotalFiltered": 2,
+  "Start": 0,
+  "ResultCount": 2,
+  "Results": [
+    {
+      "Id": 0,
+      "AccountId": 0,
+      "Type": "Home",
+      "Street": "string",
+      "City": "string",
+      "State": "string",
+      "PostalCode": "string",
+      "Country": "string",
+      "IsPrimary": true,
+      "IsBad": true,
+      "StateAbbreviation": "string",
+      "CountryCode": "string"
+    },
+    {
+      "Id": 0,
+      "AccountId": 0,
+      "Type": "Home",
+      "Street": "string",
+      "City": "string",
+      "State": "string",
+      "PostalCode": "string",
+      "Country": "string",
+      "IsPrimary": true,
+      "IsBad": true,
+      "StateAbbreviation": "string",
+      "CountryCode": "string"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "Total": 2,
+  "TotalFiltered": 2,
+  "Start": 0,
+  "ResultCount": 2,
+  "Results": [
+    {
+      "StartDate": "2023-01-31",
+      "EndDate": "2023-01-31",
+      "Goal": 0
+    },
+    {
+      "StartDate": "2023-01-31",
+      "EndDate": "2023-01-31",
+      "Goal": 0
+    }
+  ]
+}

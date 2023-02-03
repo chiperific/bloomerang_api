@@ -1,0 +1,180 @@
+addresses: plural
+address: singular
+
+appeals: plural
+appeal: singular
+
+campaigns: plural
+campaign
+campaigns/refreshsummaries: plural
+
+constituents: plural
+constituent: singluar
+constituent/duplicates:         PLURAL
+constituent/merge: singluarl
+constituents/search: plural
+constituent: singluar
+constituents/123/relationships: PLURAL RELATIONSHIPS
+constituents/123/timeline:      PLURAL TIMELINE
+constituent/123/updateCommunicationSettings: singluar
+
+# TODO: left off here.
+# checking responses from Bloomerang API
+# and making stub files
+
+customFieldCategories/TYPE
+customFields/TYPE
+customValues/TYPE
+customValues/TYPE/123
+emails
+email/123
+email
+emailInterests
+emailInterest/123
+funds
+fund/123
+fund
+households
+household/123
+household
+household/123/updateCommunicationSettings
+interactions
+interaction
+interaction/123
+notes
+note
+note/123
+phones
+phone
+phone/123
+pledge/123/installments
+pledge/generateInstallments
+pledge/123/payments
+pledge/123/paymentFailures
+pledge/123/writeOff
+refunds
+refund/123
+refund
+relationship
+relationship/123
+relationshiproles
+relationshiprole
+softcredits
+softcredit
+softcredit/123
+tasks
+task
+task/123
+task/123/complete
+transactions
+transaction
+transaction/123
+transactions/designations
+transactions/designation/123
+tributes
+tribute
+tribute/123
+tributes/search
+
+###
+
+addresses_get
+address_get
+address_post
+address_put
+address_delete
+appeals_get
+appeal_get
+appeal_post
+appeal_put
+campaigns_get
+campaign_get
+campaign_post
+campaign_put
+campaigns_refreshsummaries_get
+constituents_get
+constituent_get
+constituent_relationships_get
+constituent_timeline_get
+constituent_updateCommunicationSettings_put
+constituents_search_get
+constituent_merge_post
+constituent_post
+constituent_put
+constituent_duplicates_post
+constituent_delete
+customFieldCategories_TYPE_get
+customFields_TYPE_get
+customValues_TYPE_get
+emails_get
+email_get
+email_post
+email_put
+email_delete
+emailInterests_get
+emailInterest_get
+funds_get
+fund_get
+fund_post
+fund_put
+households_get
+household_get
+household_post
+household_put
+address_delete
+household_updateCommunicationSettings_put
+interactions_get
+interaction_get
+interaction_post
+interaction_put
+interaction_delete
+notes_get
+note_get
+note_post
+note_put
+note_delete
+phones_get
+phone_get
+phone_post
+phone_put
+phone_delete
+pledge_installments_get
+pledge_generateInstallments_get
+pledge_payments_get
+pledge_paymentFailures_get
+pledge_writeOff_post
+refunds_get
+refund_get
+refund_post
+refund_put
+refund_delete
+relationship_post
+relationship_get
+relationship_put
+relationship_delete
+relationshiproles_get
+relationshiprole_get
+softcredits_get
+softcredit_get
+softcredit_post
+softcredit_put
+softcredit_delete
+tasks_get
+task_get
+task_post
+task_put
+task_delete
+task_complete_put
+transactions_get
+transaction_get
+transaction_post
+transaction_put
+transaction_delete
+transactions_designations_get
+transactions_designation_get
+tributes_get
+tribute_get
+tribute_post
+tribute_put
+tribute_delete
+tributes_search_get

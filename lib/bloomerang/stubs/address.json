@@ -1,0 +1,14 @@
+{
+  "Id": 0,
+  "AccountId": 0,
+  "Type": "Home",
+  "Street": "string",
+  "City": "string",
+  "State": "string",
+  "PostalCode": "string",
+  "Country": "string",
+  "IsPrimary": true,
+  "IsBad": true,
+  "StateAbbreviation": "string",
+  "CountryCode": "string"
+}
