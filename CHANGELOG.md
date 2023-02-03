@@ -1,11 +1,17 @@
-## [Unreleased]
+## [1.0.2] - 2023-01-30
+- Increment gem version to force fresh installs after `.gitignore` changes
 
-## [0.1.0] - 2022-03-10
+## [1.0.1] - 2023-01-30
+- Fix `CustomField` and `Refund` not inheriting from `Base`
 
-- Initial release by [@allynfolksjr](https://github.com/allynfolksjr) from https://github.com/mcsweeneys/bloomerang with base classes:
-  - constituent
-  - fund
-  - transaction
+## [1.0.0] - 2023-01-22
+- All endpoint classes respond without instantiation:
+  - `Bloomerang::Constituent.fetch()` instead of `Bloomerang::Constituent.new.fetch()`
+- `rails g bloomerang:initializer`
+  - Copies configuration file in to "rails_root/config/initializers"
+
+## [0.2.1] - 2023-01-22
+- move bloomerang_config file to new location
 
 ## [0.2.0] - 2023-01-21
 
@@ -35,3 +41,9 @@
   - fund
   - transaction
 
+  ## [0.1.0] - 2022-03-10
+
+  - Initial release by [@allynfolksjr](https://github.com/allynfolksjr) from https://github.com/mcsweeneys/bloomerang with base classes:
+    - constituent
+    - fund
+    - transaction
